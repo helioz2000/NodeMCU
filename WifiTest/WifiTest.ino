@@ -9,8 +9,8 @@
 #include <ESP8266WiFi.h>
 
 // Fill in network details below:
-const char* ssid     = "";
-const char* password = "";
+const char* ssid     = "ssid";
+const char* password = "password";
 
 const char* host = "data.sparkfun.com";
 const char* streamId   = "....................";
