@@ -10,11 +10,10 @@ ADC_MODE(ADC_VCC);    // switch analog input to read VCC
 #define BUTTON_PIN D3
 
 #define UPDATE_TIME 3000
-
+int led_pin = 2; 
 bool show_info = false;
 bool last_buttonState = 1;
 unsigned long time_expired = 0;
-
 
 void setup() {
   Serial.begin(9600);
@@ -22,6 +21,12 @@ void setup() {
   mylog("\n-- ESP8266 Test --\n");
 
   pinMode(BUTTON_PIN, INPUT);
+  pinMode(led_pin, OUTPUT);
+  digitalWrite(led_pin, LOW);
+  delay(2000);
+  digitalWrite(led_pin, HIGH);
+  
+  mylog("----\n");
   
   esp_info();
   delay(1000);
